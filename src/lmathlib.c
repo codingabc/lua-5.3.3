@@ -168,7 +168,7 @@ static int math_sqrt (lua_State *L) {
   return 1;
 }
 
-
+/* ult: unsigned less than */
 static int math_ult (lua_State *L) {
   lua_Integer a = luaL_checkinteger(L, 1);
   lua_Integer b = luaL_checkinteger(L, 2);
@@ -198,11 +198,13 @@ static int math_exp (lua_State *L) {
   return 1;
 }
 
+/* 弧度转角度 */
 static int math_deg (lua_State *L) {
   lua_pushnumber(L, luaL_checknumber(L, 1) * (l_mathop(180.0) / PI));
   return 1;
 }
 
+/* 角度转弧度 */
 static int math_rad (lua_State *L) {
   lua_pushnumber(L, luaL_checknumber(L, 1) * (PI / l_mathop(180.0)));
   return 1;
